@@ -5,7 +5,7 @@ import Commands from '../../components/Commands/Commands';
 class Calculator extends Component {
     render() {
         return (
-            <div>
+            <div className='Calculator'>
                <Display /> 
                <Commands /> 
             </div>
