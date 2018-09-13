@@ -5,7 +5,8 @@ import * as math from 'mathjs'
 class Calculator extends Component {
   state = {
     input: '0',
-    result: undefined
+    result: undefined,
+    error: null
   }
 
   addInputHandler = (type, value) => {
@@ -23,10 +24,11 @@ class Calculator extends Component {
             }
             break;
         case 'operator':
-        case 'point':
+            if(value === '.' && this.state.input.includes('.')) {
+              return;
+            }
             const lastCharacter = this.state.input[this.state.input.length - 1];
             const isOperator = isNaN(lastCharacter);
-
             if(!isOperator) {
               this.setState(prevState => ({
                 input: prevState.input + value
@@ -36,6 +38,7 @@ class Calculator extends Component {
               let newInput = this.state.input.slice(0, lastIndex) + value;
               this.setState({input: newInput})
             }
+
             break;
         default:
         this.resultHandler(this.state.input);
