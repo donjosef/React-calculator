@@ -22,7 +22,6 @@
     height: 70px;
     /* overflow-wrap: break-word; */
     word-break: break-word;
-
     overflow-y: auto;
 }
 
@@ -71,4 +70,10 @@
 .Success {
     width: 75%;
     background: #004466;
+}
+
+@media (max-width: 450px) {
+  .Calculator {
+    width: 90%;
+  }
 }
