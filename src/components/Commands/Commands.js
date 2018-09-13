@@ -4,27 +4,28 @@ import Button from '../Button/Button';
 const calcCommands = [
     {type: 'danger', value: 'AC'},
     {type: 'operator', value: '/'},
-    {type: 'operator', value: 'x'},
-    {type: 'numb', value: 9},
-    {type: 'numb', value: 8},
-    {type: 'numb', value: 7},
+    {type: 'operator', value: '*'},
+    {type: 'numb', value: '9'},
+    {type: 'numb', value: '8'},
+    {type: 'numb', value: '7'},
     {type: 'operator', value: '+'},
-    {type: 'numb', value: 6},
-    {type: 'numb', value: 5},
-    {type: 'numb', value: 4},
+    {type: 'numb', value: '6'},
+    {type: 'numb', value: '5'},
+    {type: 'numb', value: '4'},
     {type: 'operator', value: '-'},
-    {type: 'numb', value: 3},
-    {type: 'numb', value: 2},
-    {type: 'numb', value: 1},
-    {type: 'numb', value: 0},
+    {type: 'numb', value: '3'},
+    {type: 'numb', value: '2'},
+    {type: 'numb', value: '1'},
+    {type: 'numb', value: '0'},
     {type: 'point', value: '.'},
     {type: 'success', value: '='},
 ];
 
 const commands = props => {
     const buttons = calcCommands.map(command => (
-        <Button 
+        <Button
             key={'command' + command.value}
+            clicked={() => props.onAddInput(command.type, command.value)}
             type={command.type}>
             {command.value}
         </Button>
