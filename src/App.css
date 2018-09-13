@@ -44,8 +44,14 @@
    color: white;
    font-size: 1.4em;
    border: 1px solid black;
-
+   outline: none;
 }
+
+.Button:hover,
+.Button:active {
+  border: 1px solid white;
+}
+
 .Numb,
 .Point {
     width: 25%;
