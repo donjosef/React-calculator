@@ -41,7 +41,15 @@ class Calculator extends Component {
 
             break;
         default:
-        this.resultHandler(this.state.input);
+          const checkLastCharachter = this.state.input[this.state.input.length - 1];
+          if(checkLastCharachter === '+' ||
+             checkLastCharachter === '-' ||
+             checkLastCharachter === '/' || 
+             checkLastCharachter === '*') {
+            return;
+          } else {
+            this.resultHandler(this.state.input);
+          }
       }
 
   }
