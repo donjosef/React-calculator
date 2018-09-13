@@ -1,10 +1,15 @@
 import React from 'react';
 
 const display = props => {
+  let label = null;
+  if(props.result) {
+    label = 'Result: ';
+  }
     return (
         <div className='Display'>
-            {props.input}
-            8
+            <p>{props.input}</p>
+            <p>{label}{props.result}</p>
+
         </div>
     );
 }
