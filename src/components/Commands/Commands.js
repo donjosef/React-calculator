@@ -17,7 +17,7 @@ const calcCommands = [
     {type: 'numb', value: '2'},
     {type: 'numb', value: '1'},
     {type: 'numb', value: '0'},
-    {type: 'point', value: '.'},
+    {type: 'operator', value: '.'},
     {type: 'success', value: '='},
 ];
 
