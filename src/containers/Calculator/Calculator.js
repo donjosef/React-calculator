@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Display from '../../components/Display/Display';
 import Commands from '../../components/Commands/Commands';
-import * as math from 'mathjs'
+import * as math from 'mathjs';
+
 class Calculator extends Component {
   state = {
     input: '0',
@@ -56,6 +57,7 @@ class Calculator extends Component {
 
   resultHandler = (expression) => {
     this.setState({
+      input: math.eval(expression).toString(), //important for match the logic on line 31
       result: math.eval(expression)
     })
   }
