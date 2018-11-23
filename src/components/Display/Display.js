@@ -14,7 +14,7 @@ const display = props => {
     }
   }
     return (
-        <div className='Display'>
+        <div id="display" className='Display'>
             <p>{props.input}</p>
             <p>{label}{result}</p>
 

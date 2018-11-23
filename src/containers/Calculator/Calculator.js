@@ -45,7 +45,7 @@ class Calculator extends Component {
           const checkLastCharachter = this.state.input[this.state.input.length - 1];
           if(checkLastCharachter === '+' ||
              checkLastCharachter === '-' ||
-             checkLastCharachter === '/' || 
+             checkLastCharachter === '/' ||
              checkLastCharachter === '*') {
             return;
           } else {

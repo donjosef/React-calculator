@@ -17,12 +17,13 @@ const button = props => {
             break;
         case 'point':
             classes.push('Point');
-            break;         
+            break;
     }
-   
+
     return (
         <button
-            className={classes.join(' ')} 
+            id={props.id}
+            className={classes.join(' ')}
             onClick={props.clicked}>
             {props.children}
         </button>
