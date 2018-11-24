@@ -17,7 +17,6 @@ const display = props => {
         <div id="display" className='Display'>
             <p>{props.input}</p>
             <p>{label}{result}</p>
-
         </div>
     );
 }

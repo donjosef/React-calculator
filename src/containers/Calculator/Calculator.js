@@ -25,7 +25,7 @@ class Calculator extends Component {
             }
             break;
         case 'operator':
-            if(value === '.' && this.state.input.includes('.')) {
+            if(value === '.' && this.state.input[this.state.input.length - 1] === '.') {
               return;
             }
             const lastCharacter = this.state.input[this.state.input.length - 1];
