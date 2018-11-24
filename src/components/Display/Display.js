@@ -3,20 +3,13 @@ import React from 'react';
 const display = props => {
   let label = null;
   if(props.result) {
-    label = 'Result: ';
+    label = 'Result: ' + props.result;
   }
-  let result = props.result;
-  if(result !== undefined && !Number.isInteger(result)) {
-    const resultStr = result.toString();
-    const numberOfDecimals = resultStr.slice(resultStr.indexOf('.') + 1).length;
-    if(numberOfDecimals > 7) {
-      result = result.toFixed(7)
-    }
-  }
+  
     return (
         <div id="display" className='Display'>
-            <p>{props.input}</p>
-            <p>{label}{result}</p>
+          {props.input}
+          {props.result && <p>{label}</p>}
         </div>
     );
 }
