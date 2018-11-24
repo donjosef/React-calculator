@@ -6,14 +6,12 @@ import * as math from 'mathjs';
 class Calculator extends Component {
   state = {
     input: '0',
-    result: undefined,
-    error: null
   }
 
   addInputHandler = (type, value) => {
       switch(type) {
         case 'danger':
-            this.setState({input: '0', result: undefined});
+            this.setState({input: '0'});
             break;
         case 'numb':
            if(this.state.input === '0') {
@@ -63,12 +61,11 @@ class Calculator extends Component {
   resultHandler = (expression) => {
     this.setState({
       input: math.eval(expression).toString(), //important for match the logic on line 31
-      result: math.eval(expression)
     })
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    if(nextState.input !== this.state.input || nextState.result !== this.state.result) {
+    if(nextState.input !== this.state.input) {
       return true;
     } else {
       return false;
@@ -78,7 +75,7 @@ class Calculator extends Component {
     render() {
         return (
             <div className='Calculator'>
-               <Display input={this.state.input} result={this.state.result}/>
+               <Display input={this.state.input}/>
                <Commands onAddInput={this.addInputHandler}/>
             </div>
         );
