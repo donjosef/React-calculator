@@ -25,7 +25,12 @@ class Calculator extends Component {
             }
             break;
         case 'operator':
-            if(value === '.' && this.state.input[this.state.input.length - 1] === '.') {
+            if((value === '.' && this.state.input[this.state.input.length - 1] === '.') ||
+               (value === '.' && this.state.input.includes('.')) &&
+                !this.state.input.includes('+') &&
+                !this.state.input.includes('-') &&
+                !this.state.input.includes('/') &&
+                !this.state.input.includes('*')) {
               return;
             }
             const lastCharacter = this.state.input[this.state.input.length - 1];
