@@ -26,3 +26,5 @@ The project makes use of math.js package to handle all the math operations in a 
 #### Built with
 
 This project was bootstraped with [create react app](https://github.com/facebook/create-react-app)
+
+[Live Demo](https://donjosef.github.io/React-calculator/)
